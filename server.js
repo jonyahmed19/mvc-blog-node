@@ -1,13 +1,28 @@
 const express = require("express");
+require("dotenv").config();
 const app = express();
+const morgan = require("morgan");
+/**
+ * DB URI
+ */
+
+const dbURI =
+  "mongodb+srv://theninja:<QykzyIvFQx5oUJuX>@cluster0.vwwwk.mongodb.net/?retryWrites=true&w=majority";
+
 app.set("view engine", "ejs");
 
-// app.use(logger);
+/**
+ * Using morgan
+ */
+app.use(morgan("dev"));
+/**
+ * Static files calling from public folder
+ */
+app.use(express.static("public"));
 
-// function logger(req, res, next) {
-//   console.log(req.originalUrl);
-//   next();
-// }
+/**
+ * Home page route
+ */
 app.get("/", (req, res, next) => {
   const blogs = [
     {
