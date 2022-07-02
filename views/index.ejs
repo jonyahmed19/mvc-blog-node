@@ -5,10 +5,13 @@
     <%- include('./include/nav.ejs') %>
     <div class="blogs content">
       <% if (blogs.length > 0) { %> <%blogs.forEach(blog => { %>
-      <h3 class="title"><%= blog.title %></h3>
-      <p class="snippet"><%= blog.body %></p>
-
-      <% }); %> <% } %>
+      <a href="/blogs/<%= blog._id %> ">
+        <h3 class="title"><%= blog.title %></h3>
+        <p class="snippet"><%= blog.snippet %></p>
+      </a>
+      <% }); %> <% }else{ %>
+      <p>No posts found!</p>
+      <% } %>
     </div>
     <%- include('./include/footer.ejs') %>
   </body>
