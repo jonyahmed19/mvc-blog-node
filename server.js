@@ -2,12 +2,25 @@ const express = require("express");
 require("dotenv").config();
 const app = express();
 const morgan = require("morgan");
+const mongoose = require("mongoose");
+
 /**
  * DB URI
  */
 
-const dbURI =
-  "mongodb+srv://theninja:<QykzyIvFQx5oUJuX>@cluster0.vwwwk.mongodb.net/?retryWrites=true&w=majority";
+const dbURI = `mongodb+srv://theninja:${process.env.PASSWORD}@cluster0.vwwwk.mongodb.net/ninja-blog?retryWrites=true&w=majority`;
+
+/**
+ * Database connection
+ */
+mongoose
+  .connect(dbURI)
+  .then(() => {
+    console.log("Database is connected");
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 
 app.set("view engine", "ejs");
 
