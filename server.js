@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
  * DB URI
  */
 
-const dbURI = `mongodb+srv://theninja:${process.env.PASSWORD}@cluster0.vwwwk.mongodb.net/ninja-blog?retryWrites=true&w=majority`;
+const dbURI = `mongodb://localhost:27017/ninja-blog`;
 
 /**
  * Database connection
