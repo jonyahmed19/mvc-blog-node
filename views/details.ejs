@@ -16,15 +16,18 @@
     <script>
       const id = document.querySelector("a.delete");
       id.addEventListener("click", (e) => {
-        const endpoint = `/blogs/${id.dataset.doc}`;
-        fetch(endpoint, {
-          method: "DELETE",
-        })
-          .then((res) => {
-            res.json();
+        if (confirm("Are you sure to delete?")) {
+          const endpoint = `/blogs/${id.dataset.doc}`;
+          fetch(endpoint, {
+            method: "DELETE",
           })
-          .then((data) => console.log(data))
-          .catch((e) => console.log(e));
+            .then((res) => res.json())
+            .then((data) => {
+              console.log("Data", data);
+              window.location.href = data.redirect;
+            })
+            .catch((e) => console.log(e));
+        }
       });
     </script>
   </body>
