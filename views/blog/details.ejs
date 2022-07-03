@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./include/head.ejs") %>
+  <%- include("../include/head.ejs") %>
   <body>
-    <%- include("./include/nav.ejs") %>
+    <%- include("../include/nav.ejs") %>
     <div class="details content">
       <h2><%= blog.title %></h2>
       <div class="content">
@@ -11,7 +11,7 @@
       <a class="delete" data-doc="<%= blog._id %>">delete</a>
     </div>
 
-    <%- include("./include/footer.ejs") %>
+    <%- include("../include/footer.ejs") %>
 
     <script>
       const id = document.querySelector("a.delete");

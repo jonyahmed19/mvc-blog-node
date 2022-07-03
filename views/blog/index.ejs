@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./include/head.ejs') %>
+  <%- include('../include/head.ejs') %>
   <body>
-    <%- include('./include/nav.ejs') %>
+    <%- include('../include/nav.ejs') %>
     <div class="blogs content">
       <% if (blogs.length > 0) { %> <%blogs.forEach(blog => { %>
       <a href="/blogs/<%= blog._id %> ">
@@ -13,6 +13,6 @@
       <p>No posts found!</p>
       <% } %>
     </div>
-    <%- include('./include/footer.ejs') %>
+    <%- include('../include/footer.ejs') %>
   </body>
 </html>
