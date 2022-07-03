@@ -40,7 +40,7 @@ app.get("/", (req, res, next) => {
 /**
  * Blog Routers
  */
-app.use(blogRouter);
+app.use("/blogs", blogRouter);
 
 app.get("/about", (req, res, next) => {
   res.render("about", { title: "About" });
